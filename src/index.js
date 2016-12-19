@@ -5,6 +5,8 @@ import './index.css';
 // 1. Initialize
 const app = dva();
 
+app.model(require("./models/users"));
+
 // 2. Plugins
 // app.use({});
 
