@@ -4,7 +4,13 @@
   "less": false,
   "publicPath": "/",
   "autoprefixer": null,
-  "proxy": null,
+  "proxy": {
+    "/api": {
+      "target": "http://jsonplaceholder.typicode.com/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  },
   "extraBabelPlugins": [
     "transform-runtime",
     ["import", { "libraryName": "antd", "style": "css" }]
