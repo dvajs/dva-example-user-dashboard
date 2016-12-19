@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Modal, Form, Input } from 'antd';
-import styles from './UserModal.css';
 
 const FormItem = Form.Item;
 
