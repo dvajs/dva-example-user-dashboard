@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Table, Pagination, Popconfirm } from 'antd';
+import { Table, Pagination, Popconfirm, Button } from 'antd';
 import { routerRedux } from 'dva/router';
 import styles from './Users.css';
 import { PAGE_SIZE } from '../../constants';
@@ -25,6 +25,13 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
     dispatch({
       type: 'users/patch',
       payload: { id, values },
+    });
+  }
+
+  function createHandler(values) {
+    dispatch({
+      type: 'users/create',
+      payload: values,
     });
   }
 
@@ -64,6 +71,11 @@ function Users({ dispatch, list: dataSource, loading, total, page: current }) {
   return (
     <div className={styles.normal}>
       <div>
+        <div className={styles.create}>
+          <UserModal record={{}} onOk={createHandler}>
+            <Button type="primary">Create User</Button>
+          </UserModal>
+        </div>
         <Table
           columns={columns}
           dataSource={dataSource}

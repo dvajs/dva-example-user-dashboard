@@ -17,3 +17,10 @@ export function patch(id, values) {
     body: JSON.stringify(values),
   });
 }
+
+export function create(values) {
+  return request('/api/users', {
+    method: 'POST',
+    body: JSON.stringify(values),
+  });
+}
