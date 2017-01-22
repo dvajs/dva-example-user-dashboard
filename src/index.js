@@ -13,7 +13,7 @@ const app = dva({
 app.use(createLoading());
 
 // 3. Model
-app.model(require('./models/users'));
+// Moved to router.js
 
 // 4. Router
 app.router(require('./router'));
