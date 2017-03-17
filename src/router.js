@@ -1,11 +1,11 @@
 import React from 'react';
 import { Router } from 'dva/router';
 
-const cached = {};
+window.__cached_model__ = window.__cached_model__ || {};
 function registerModel(app, model) {
-  if (!cached[model.namespace]) {
+  if (!window.__cached_model__[model.namespace]) {
     app.model(model);
-    cached[model.namespace] = 1;
+    window.__cached_model__[model.namespace] = 1;
   }
 }
 
