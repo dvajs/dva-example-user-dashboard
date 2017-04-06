@@ -9,7 +9,7 @@ export default {
     addMessageSuccess(state, { payload }) {
       const message = {
         id: state.messages.length,
-        text: payload.data,
+        text: payload,
       };
 
       const messages = state.messages.concat([message]);
@@ -25,7 +25,7 @@ export default {
       yield call(delay, 1000);
 
       if (resolve) {
-        resolve(payload.data);
+        resolve(payload);
       }
 
       yield put({ type: 'addMessageSuccess', payload });

@@ -1,17 +1,5 @@
 import { delay } from '../services/delay';
-
-const makeService = (time) => {
-  return (data) => {
-    // console.log(`${data} start`);
-
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(data);
-        // console.log(`${data} end`);
-      }, time);
-    });
-  };
-};
+import { makeService } from '../services/makeService';
 
 export default {
   namespace: 'task',
@@ -43,7 +31,7 @@ export default {
 
       const { data, timeout } = yield race({
         data: call(makeService(2000), 'some data'),
-        timeout: call(delay, 1000),
+        timeout: call(delay, 3000),
       });
 
       if (data) {
