@@ -3,7 +3,7 @@ import { effects } from 'dva/saga';
 
 import * as usersService from '../src/services/users';
 
-import user, { pageSelector } from '../src/models/users';
+import { user, pageSelector } from '../src/models/users';
 
 describe('User Model', () => {
   it('loads', () => {

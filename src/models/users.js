@@ -3,7 +3,7 @@ import * as usersService from '../services/users';
 // selector放在这里，而且要export出来，不然不好写测试……
 export const pageSelector = state => state.users.page;
 
-export default {
+export const user = {
   namespace: 'users',
   state: {
     list: [],
