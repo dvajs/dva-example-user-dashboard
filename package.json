@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "roadhog server",
+    "start": "roadhog buildDll && roadhog server",
     "build": "roadhog build",
     "build:dll": "roadhog buildDll",
     "test": "roadhog test",
