@@ -24,7 +24,8 @@
   "env": {
     "development": {
       "extraBabelPlugins": [
-        "dva-hmr"
+        "dva-hmr",
+        ["import", { "libraryName": "antd", "style": true }]
       ]
     }
   },
