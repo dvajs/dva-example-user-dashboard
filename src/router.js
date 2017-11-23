@@ -25,8 +25,38 @@ function RouterConfig({ history, app }) {
       name: 'UsersPage',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
-          registerModel(app, require('./models/users'));
+          registerModel(app, require('./models/users').user);
           cb(null, require('./routes/Users'));
+        });
+      },
+    },
+    {
+      path: '/tasks',
+      name: 'TasksPage',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./routes/Tasks'));
+          registerModel(app, require('./models/task'));
+        });
+      },
+    },
+    {
+      path: '/a',
+      name: 'APage',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./routes/A'));
+          registerModel(app, require('./models/a'));
+        });
+      },
+    },
+    {
+      path: '/b',
+      name: 'BPage',
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./routes/B'));
+          registerModel(app, require('./models/b'));
         });
       },
     },

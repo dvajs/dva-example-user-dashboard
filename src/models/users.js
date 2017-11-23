@@ -1,6 +1,9 @@
 import * as usersService from '../services/users';
 
-export default {
+// selector放在这里，而且要export出来，不然不好写测试……
+export const pageSelector = state => state.users.page;
+
+export const user = {
   namespace: 'users',
   state: {
     list: [],
@@ -37,7 +40,7 @@ export default {
       yield put({ type: 'reload' });
     },
     *reload(action, { put, select }) {
-      const page = yield select(state => state.users.page);
+      const page = yield select(pageSelector);
       yield put({ type: 'fetch', payload: { page } });
     },
   },

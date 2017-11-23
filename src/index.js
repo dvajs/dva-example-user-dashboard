@@ -5,6 +5,9 @@ import { message } from 'antd';
 import './index.html';
 import './index.css';
 
+import logger from './models/logger';
+import reusable from './models/reusable';
+
 const ERROR_MSG_DURATION = 3; // 3 秒
 
 // 1. Initialize
@@ -20,6 +23,8 @@ app.use(createLoading());
 
 // 3. Model
 // Moved to router.js
+app.model(logger);
+app.model(reusable);
 
 // 4. Router
 app.router(require('./router'));
