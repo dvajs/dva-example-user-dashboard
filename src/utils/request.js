@@ -22,7 +22,7 @@ export default async function request(url, options) {
 
   checkStatus(response);
 
-  const data = await response.json();
+  const data = response.status === 204 ? null : await response.json();
 
   const ret = {
     data,
