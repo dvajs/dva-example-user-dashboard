@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "prestart": "npm run build:dll",
     "start": "roadhog server",
     "build": "roadhog build",
     "build:dll": "roadhog buildDll",
